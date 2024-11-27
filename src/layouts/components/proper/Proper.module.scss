@@ -1,0 +1,22 @@
+.wrapper {
+    color: #0000008a;
+    font-size: 1.4rem;
+    max-height: calc(90vh - 66px);
+    min-height: 50px;
+    min-width: 230px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 12px 24px;
+
+}
+
+.wrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    background-color: #e0dddd;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+    background: #b0acac;
+    border-radius: 3px;
+}

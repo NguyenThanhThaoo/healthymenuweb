@@ -1,0 +1,40 @@
+.wapper {
+    bottom: 10px;
+    right: 10px;
+    position: fixed;
+
+}
+
+.button {
+    align-items: center;
+    background-color: hsla(41, 100%, 64%, 0.995);
+    border-radius: 5px;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    height: 30px;
+    justify-content: center;
+
+    width: 30px;
+
+    span {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: white;
+    }
+
+    &:hover {
+        background-color: hsla(39, 100%, 50%, 0.995);
+    }
+}
+
+.button+.icon {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}

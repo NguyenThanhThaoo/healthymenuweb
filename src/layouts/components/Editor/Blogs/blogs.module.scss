@@ -1,0 +1,36 @@
+.inputContent,
+.code-view {
+    width: 100%;
+}
+
+.code-view {
+    padding: 1.5rem 1rem;
+    height: calc(100vh - 100px);
+    overflow: auto;
+    resize: none;
+}
+
+.text-area {
+    width: 100%;
+    background: transparent;
+    border: none;
+    min-height: 100%;
+    text-align: start;
+    word-wrap: break-word;
+    margin-top: 32px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.code-view::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.code-view::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+    background-color: rgb(86, 82, 82);
+}

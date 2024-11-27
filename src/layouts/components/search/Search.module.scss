@@ -1,0 +1,142 @@
+.search-result {
+    width: 410px;
+
+}
+
+.search-heading {
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    padding: 24px 0 12px;
+
+    h5 {
+        color: #333;
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    a {
+        opacity: 0.7;
+
+
+        &:hover {
+            color: #f05123;
+            opacity: 1;
+        }
+    }
+}
+
+
+.search-result {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 -4px 32px rgba(0, 0, 0, .2);
+    color: #1d2129;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 0;
+    transition: all .3s ease-in-out;
+    will-change: opacity, transform;
+}
+
+.search-find {
+    align-items: center;
+    padding: 6px 0 0;
+
+    span {
+        padding-left: 8px;
+    }
+
+}
+
+.loading {
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.body-search {
+    flex: 1 1;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.search {
+    border: 2px solid #e8e8e8;
+    border-radius: 20px;
+    height: 40px;
+    padding: 0 8px;
+    transition: border-color .2s ease-in-out;
+    width: 420px;
+
+    input {
+        caret-color: #444;
+        padding: 0 5px;
+        width: 340px;
+        height: 100%;
+        background-color: transparent;
+    }
+
+    &:focus-within {
+        border: 1.6px solid #444;
+    }
+}
+
+.search-bnt {
+    border-radius: 50%;
+    height: 100%;
+    color: #7c7c7c;
+    width: 30px;
+    background-color: transparent;
+    font-size: 1.7rem;
+    padding: 0;
+    margin: 0;
+
+    &:hover {
+        cursor: pointer;
+        color: #1a1919;
+
+
+    }
+
+
+}
+
+.clear {
+    background-color: transparent;
+    cursor: pointer;
+    height: 100%;
+    color: #afadad;
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+
+
+    &:hover {
+        cursor: pointer;
+        color: #444242;
+    }
+
+}
+
+
+
+@media screen and (max-width:750px) {
+
+    .search {
+        display: none;
+    }
+
+}

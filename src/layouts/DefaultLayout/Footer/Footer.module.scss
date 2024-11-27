@@ -1,0 +1,175 @@
+.wrapper {
+    width: 100%;
+    background-color: #181821;
+    color: #a9b3bb;
+    overflow: hidden;
+    padding: 68px 0 40px;
+    min-height: 440px;
+}
+
+.module-grid {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.module-width {
+    width: 100%;
+    max-width: 1224px;
+    margin: 0 auto;
+}
+
+.module-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+    justify-content: center;
+}
+
+@media (min-width:1113px) {
+
+    // .module-row {
+    //     margin-left: -12px;
+    //     margin-right: -12px;
+    // }
+
+    .module-l-3 {
+        width: 25%;
+    }
+
+    .module-col-2 {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+
+}
+
+@media screen and (max-width:740px) {
+    .module-m-12 {
+        width: 100%;
+    }
+
+    .module-col-2 {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+.module-col-2 {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+// .module-c-12 {
+//     width: 100%;
+// }
+
+.column {
+    display: flex;
+    justify-content: center;
+}
+
+.column-top {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.logo {
+    border-radius: 8px;
+    height: 38px;
+    margin-right: 10px;
+    width: 38px;
+
+}
+
+.slogan {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.contact-list {
+    color: #a9b3bb;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    position: relative;
+
+    a {
+        color: #a9b3bb !important;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.heading {
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-top: 10px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.list {
+    padding-left: 0;
+
+    a {
+        color: #a9b3bb !important;
+        cursor: pointer;
+        position: relative;
+        transition: .3s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    li {
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+        margin-bottom: 8px;
+        position: relative;
+    }
+}
+
+.bottom {
+    align-items: baseline;
+    display: flex;
+    margin-top: 48px;
+}
+
+.copyright {
+    font-size: 1.8rem;
+}
+
+@media screen and (max-width:1120px) {
+    .wrapper {
+        padding: 48px 16px 40px;
+    }
+
+    .module-c-12 {
+        width: 100%;
+    }
+
+    .column {
+        justify-content: flex-start;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width:750px) and (max-width:1120px) {
+    .module-row {
+        flex-wrap: nowrap;
+    }
+
+    .column {
+        justify-content: center;
+    }
+
+
+
+}

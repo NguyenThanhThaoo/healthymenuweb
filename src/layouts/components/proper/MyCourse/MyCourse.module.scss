@@ -1,0 +1,135 @@
+.courses-o {
+    width: 391px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 -4px 32px rgba(0, 0, 0, .2);
+    color: #1d2129;
+    margin: 0;
+    padding-left: 0;
+    will-change: opacity, transform;
+}
+
+.Own-course {
+    background-color: transparent;
+    color: #484646;
+    cursor: pointer;
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-right: 16px;
+    padding: 8px;
+
+
+}
+
+.noregisted {
+    font-size: 1.7rem;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.course-heading {
+    align-items: center;
+    display: flex;
+    padding: 14px 20px 16px;
+
+    h6 {
+        font-size: 2rem;
+        color: black;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    a {
+        border-radius: 4px;
+        color: #f05123 !important;
+        font-size: 1.4rem;
+        margin-left: auto;
+        padding: 8px;
+
+        &:hover {
+            background-color: #f1f1f1;
+        }
+    }
+}
+
+.content {
+    max-height: 70vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: 10px;
+
+}
+
+.content::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #e0dddd;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #b0acac;
+    border-radius: 3px;
+}
+
+.body {
+    border-radius: 10px;
+    display: flex;
+    margin: 0 8px;
+    transition: background-color .3s;
+    padding: 8px 8px;
+
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .05)
+    }
+
+}
+
+.thumnail {
+    background-color: #ebebeb;
+    border-radius: 8px;
+    display: block;
+    line-height: 67px;
+    min-height: 67px;
+    text-align: center;
+    width: 120px;
+}
+
+.body-child {
+    flex: 1 1;
+    margin-left: 12px;
+
+    a {
+        background-color: transparent;
+
+        cursor: pointer;
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}
+
+.h3 {
+    font-size: 1.4rem;
+}
+
+.contiunue-Learn {
+    color: #f05123 !important;
+}
+
+.fix-button {
+    padding: 0 5px;
+}
+
+.hours {
+    color: #666;
+    font-size: 1.6rem;
+    margin-bottom: 3px;
+}
+
+@media screen and (max-width:980px) {
+    .Own-course {
+        display: none;
+    }
+}

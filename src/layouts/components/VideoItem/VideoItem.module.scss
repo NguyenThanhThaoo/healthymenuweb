@@ -1,0 +1,30 @@
+.wrapper {
+    align-items: center;
+    display: flex;
+    padding: 6px 0;
+
+    span {
+        color: #292929;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        margin-left: 12px;
+
+    }
+}
+
+.avatar {
+    background: transparent;
+    border-radius: 50%;
+    font-size: 3.6px;
+
+
+
+    img {
+        border-radius: 50%;
+        height: 9em;
+        object-fit: cover;
+        width: 9em;
+    }
+
+
+}

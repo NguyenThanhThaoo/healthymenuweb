@@ -1,0 +1,83 @@
+.modal {
+    display: flex;
+    inset: 0;
+    overflow-x: hidden;
+    position: fixed;
+    will-change: opacity, transform;
+    z-index: 1000;
+}
+
+.fade-in {
+    -webkit-animation: fadeIn .2s ease;
+    animation: fadeIn .2s ease;
+}
+
+.modal.medium {
+    border-radius: 16px;
+    inset: auto;
+    left: 50%;
+    width: 10vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.modal,
+.overlay {
+    background-color: transparent;
+}
+
+
+.modal.medium .content {
+    padding: 20px 40px;
+}
+
+
+.content {
+    overflow: hidden;
+    padding: 100px 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+
+.overlay {
+    background-color: rgba(0, 0, 0, .3);
+    inset: 0;
+    position: fixed;
+    z-index: 999;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+
+
+
+.loading {
+    animation: spinner 0.8s linear infinite;
+    font-size: 3rem;
+    color: red;
+
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,110 @@
+.user {
+    width: 236px;
+    background: #fff;
+    border-radius: 10px;
+
+    box-shadow: 0 -4px 32px rgba(0, 0, 0, .2);
+    color: #1d2129;
+    margin: 0;
+    padding-left: 0;
+    will-change: opacity, transform;
+}
+
+.wrapper {
+    min-width: 230px;
+    padding: 8px 24px;
+
+
+
+    hr {
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        margin: 5px 0;
+    }
+}
+
+.menu-user {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.avatar {
+    margin: 10px 0;
+    position: relative;
+
+}
+
+
+.info {
+    margin-left: 12px;
+}
+
+.name {
+    color: #292929;
+    font-size: 1.6rem;
+    font-weight: 560;
+}
+
+.username {
+    color: #757575;
+    font-size: 1.4rem;
+}
+
+.avatar-child {
+    background: transparent;
+    border-radius: 50%;
+    font-size: 5.6px;
+
+    img {
+        border-radius: 50%;
+        height: 9em;
+        object-fit: cover;
+        width: 9em;
+    }
+}
+
+.details {
+    margin: 0;
+    padding-left: 0;
+
+    span {
+        font-size: 1.7rem;
+    }
+}
+
+.details,
+.profile {
+    color: #a71616;
+    cursor: pointer;
+    display: block;
+    font-size: 1.6rem;
+    padding: 4px 0;
+    opacity: 0.9;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.bnt-logout {
+    color: #333;
+    background-color: transparent;
+    width: 100%;
+    text-align: start;
+}
+
+@media screen and (max-width:980px) {
+    .user {
+        width: 100%;
+        max-height: 100%;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .avatar-user {
+        display: none;
+    }
+
+
+}
