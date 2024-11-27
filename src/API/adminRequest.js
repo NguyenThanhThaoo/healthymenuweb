@@ -44,7 +44,7 @@ export const editDishAdmin = (id, data) => API.put('/editFood/' + id,data, {
         'Authorization': localStorage.getItem('token')
     }, 
 })
-export const deleteDishAdmin = (id) => API.delete('/deleteFood/<food_id>' + id , {
+export const deleteDishAdmin = (id) => API.delete('/deleteFood/' + id , {
     headers: {
         'Authorization': localStorage.getItem('token')
     }

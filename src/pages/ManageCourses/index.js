@@ -97,7 +97,7 @@ function ManageCourses() {
                                                     className={cx('thumb', 'has-link')} 
                                                     to={`/admin/manage-foods/${val.food_id}`} 
                                                     target='_self' 
-                                                    style={{ backgroundImage: `url(${val.image_path || HealthyMenuAdmin})` }}>
+                                                    style={{ backgroundImage: `url(${val.image_path?process.env.REACT_APP_BACKEND_URL+'/'+val.image_path : HealthyMenuAdmin})` }}>
                                                     <Button 
                                                         normal 
                                                         className={cx('btn', 'cta-btn')} 

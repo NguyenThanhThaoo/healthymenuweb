@@ -70,16 +70,15 @@ function Learning() {
 
     const handleSubmitEdit = async () => {
         try {
-            const datas = {
-                name: name,
-                description: description,
-                typeoffood: typeoffood,
-                type0fgroup: type0fgroup,
-                ingredient:ingredient,
-            methob:methob,
-                image: image
-            }
-            const { data } = await editDishAdmin(searchPar.get('id'), datas)
+            const format = new FormData()
+            format.append('image', image);
+            format.append('type0fgroup', type0fgroup);
+            format.append('typeofffood', typeoffood);
+            format.append('description', description);
+            format.append('ingredient', ingredient);
+            format.append('methob', methob);
+            format.append('name', name);
+            const { data } = await editDishAdmin(searchPar.get('id'), format)
 
             if (data.success === 1) {
                 toast.success("Sửa món ăn thành công", {
@@ -154,7 +153,7 @@ function Learning() {
         try {
             const format = new FormData()
             format.append('image', image);
-            format.append('typeofgroup', type0fgroup);
+            format.append('type0fgroup', type0fgroup);
             format.append('typeofffood', typeoffood);
             format.append('description', description);
             format.append('ingredient', ingredient);
@@ -467,7 +466,7 @@ function Learning() {
                 <div className={cx('learning-center')}>
                     <div className={cx('videoplayer-wrapper')}>
                         <div className={cx('videoplayer-player')} style={{ width: '100%', height: '100%', }}>
-                            <div style={{ width: '100%', height: '100%', backgroundSize: ' cover', backgroundPosition: 'center center', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundImage: `url("${image?.preview ? image.preview : process.env.REACT_APP_BACKEND_URL + '/topic/' + image}")` }}>
+                            <div style={{ width: '100%', height: '100%', backgroundSize: ' cover', backgroundPosition: 'center center', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundImage: `url("${image?.preview ? image.preview : process.env.REACT_APP_BACKEND_URL + '/' + image}")` }}>
 
                             </div>
 

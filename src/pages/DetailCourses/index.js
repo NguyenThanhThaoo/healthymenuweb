@@ -34,48 +34,18 @@ function Learning() {
     const navigate = useNavigate();
     // const {  } = useParams()
 
-    const getDataTopics = async () => {
+
+    const handleSubmitEdit = async (slug) => {
         try {
-            const { data } = await getAllDishesAdmin()
-            if (data) {
-                setDishes([...data.dishes])
-            }
-
-        }
-        catch {
-            toast.error("Lỗi server", {
-                position: "top-center",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            })
-        }
-    }
-
-
-    useEffect(() => {
-        getDataTopics()
-        // eslint-disable-next-line
-    }, [])
-
-
-
-    const handleSubmitEdit = async () => {
-        try {
-            const datas = {
-                name: name,
-                description: description,
-                typeoffood: typeoffood,
-                type0fgroup: type0fgroup,
-                ingredient:ingredient,
-            methob:methob,
-                image: image
-            }
-            const { data } = await editDishAdmin(searchPar.get('id'), datas)
+            const format = new FormData()
+            format.append('image', image);
+            format.append('type0fgroup', type0fgroup);
+            format.append('typeofffood', typeoffood);
+            format.append('description', description);
+            format.append('ingredient', ingredient);
+            format.append('methob', methob);
+            format.append('name', name);
+            const { data } = await editDishAdmin(slug, format)
 
             if (data.success === 1) {
                 toast.success("Sửa món ăn thành công", {
@@ -118,11 +88,11 @@ function Learning() {
         })
     }
    
-    const handleDeletedishes = async () => {
+    const handleDeletedishes = async (slug) => {
         try {
-
-            const { data } = await deleteDishAdmin(searchPar.get('id'))
-            if (data.success === 1) {
+console.log("ASDsad", slug)
+            const { data } = await deleteDishAdmin( slug)
+            if (data) {
                 toast.success("Xóa món ăn thành công", {
                     position: "top-center",
                     autoClose: 2000,
@@ -133,8 +103,9 @@ function Learning() {
                     progress: undefined,
                     theme: "light",
                 })
-                getDataTopics()
-                onHandleRefresh()
+                navigate({
+                    pathname: '/admin/addFoods'
+                })
             } else {
                 toast.warn("Xóa món ăn thất bại", {
                     position: "top-center",
@@ -165,8 +136,7 @@ function Learning() {
         try {
             const { data } = await getDetailDishAdmin(id)
             if (data) {
-                // setDishesDetail({ ...data.data })
-                console.log(data)
+                setDishesDetail(data.data)
                 setName(data.data.title)
                 setTypeoffood(data.data.type0fgroup)
                 setDescription(data.data.description)
@@ -224,7 +194,7 @@ function Learning() {
                 <Avatar>
                     <button onClick={context.handleAvater} className={cx('action-bnt')}>
 
-                        <img alt='logo' className={cx('header-icon')} src={dataUser.avatar ? process.env.REACT_APP_BACKEND_URL + '/user/' + dataUser.nickname + '/' + dataUser.avatar : "https://bootdey.com/img/Content/avatar/avatar7.png"} />
+                        <img alt='logo' className={cx('header-icon')} src={dataUser.avatar ? process.env.REACT_APP_BACKEND_URL  + dataUser.nickname + '/' + dataUser.avatar : "https://bootdey.com/img/Content/avatar/avatar7.png"} />
                         <span className={cx('header-label')}>{dataUser.Username}</span>
                     </button>
                 </Avatar>
@@ -356,7 +326,7 @@ function Learning() {
                 <div className={cx('learning-center')}>
                     <div className={cx('videoplayer-wrapper')}>
                         <div className={cx('videoplayer-player')} style={{ width: '100%', height: '100%', }}>
-                            <div style={{ width: '100%', height: '100%', backgroundSize: ' cover', backgroundPosition: 'center center', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundImage: `url("${image?.preview ? image.preview : process.env.REACT_APP_BACKEND_URL + '/topic/' + image}")` }}>
+                            <div style={{ width: '100%', height: '100%', backgroundSize: ' cover', backgroundPosition: 'center center', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundImage: `url("${image?.preview ? image.preview : process.env.REACT_APP_BACKEND_URL + '/' + image}")` }}>
 
                             </div>
 
@@ -372,11 +342,11 @@ function Learning() {
                 <FontAwesomeIcon icon={faRefresh} />
                 <span>Refresh</span>
             </button>
-            <button onClick={handleDeletedishes} className={cx('actionBar-bnt', 'actionBar-primary')}>
+            <button onClick={()=>handleDeletedishes(dishesDetail.food_id)} className={cx('actionBar-bnt', 'actionBar-primary')}>
                 <FontAwesomeIcon icon={faTrash} />
                 <span>Xóa</span>
             </button>
-            <button onClick={handleSubmitEdit} className={cx('actionBar-bnt', 'actionBar-edit')}>
+            <button onClick={()=>handleSubmitEdit(dishesDetail.food_id)} className={cx('actionBar-bnt', 'actionBar-edit')}>
                 <span>Sửa</span>
                 <FontAwesomeIcon icon={faPenFancy} />
             </button>
