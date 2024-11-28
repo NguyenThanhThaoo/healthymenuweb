@@ -45,9 +45,8 @@ function Learning() {
             format.append('ingredient', ingredient);
             format.append('methob', methob);
             format.append('name', name);
-            const { data } = await editDishAdmin(slug, format)
-
-            if (data.success === 1) {
+            const res = await editDishAdmin(slug, format)
+            if (res.status===200) {
                 toast.success("Sửa món ăn thành công", {
                     position: "top-center",
                     autoClose: 2000,
