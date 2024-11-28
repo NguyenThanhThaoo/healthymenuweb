@@ -18,7 +18,7 @@ function Setting() {
     const user = JSON.parse(localStorage.getItem('currentUser'))
     const [btnEditUserName, setBtnEditUserName] = useState(false)
     const [btnEditAvatar, setBtnEditAvatar] = useState(false)
-    const [Username, setUsername] = useState(user?.Username)
+    const [Username, setUsername] = useState(user?.username)
     const [avatar, setAvatar] = useState(user?.avatar)
     const [file, setFile] = useState(null)
 
@@ -28,11 +28,11 @@ function Setting() {
                 setBtnEditUserName(false)
                 return
             } else {
-                const datas = {
-                    Username
-                }
-                const { data } = await updateUser(user.nickname, datas)
-                if (data.success === 1)
+             
+                const format = new FormData()
+                format.append('username', Username);
+                const res = await updateUser( format)
+                if (res.status === 200)
                     toast("Thay đổi thành công", {
                         position: "top-center",
                         autoClose: 1500,
@@ -44,7 +44,7 @@ function Setting() {
                         theme: "dark",
                     })
                 setBtnEditUserName(false)
-                localStorage.setItem('currentUser', JSON.stringify(data.data))
+                localStorage.setItem('currentUser', JSON.stringify(res.data.data))
             }
         } catch {
             toast.error("Lỗi server", {
@@ -67,10 +67,8 @@ function Setting() {
             try {
                 const format = new FormData()
                 format.append('image', file);
-                format.append('type', "user");
-                format.append('avatar', '');
-                const { data } = await updateImage(user.nickname, format)
-                if (data.success === 1)
+                const res = await updateUser( format)
+                if (res.status === 200)
                     toast("Thay đổi thành công", {
                         position: "top-center",
                         autoClose: 1500,
@@ -83,8 +81,8 @@ function Setting() {
                     })
                 setBtnEditAvatar(false)
                 setFile(null)
-                setAvatar(data.data.avatar)
-                localStorage.setItem('currentUser', JSON.stringify(data.data))
+                setAvatar(res.data.data.avatar)
+                localStorage.setItem('currentUser', JSON.stringify(res.data.data))
 
             } catch {
                 toast.error("Lỗi server", {
@@ -171,8 +169,7 @@ function Setting() {
                                             <div className={cx('image-photo')}>
                                                 <div className={cx('avatar')} onClick={() => setBtnEditAvatar(true)}>
                                                     {file ? <img className={cx('image-avatar')} src={file.preview} alt={Username} /> :
-                                                        user?.provider ? <img className={cx('image-avatar')} src={process.env.REACT_APP_BACKEND_URL + '/user/' + user?.nickname + '/' + avatar} alt={Username} /> :
-                                                            avatar ? (<img className={cx('image-avatar')} src={process.env.REACT_APP_BACKEND_URL + '/user/' + user?.nickname + '/' + avatar} alt={Username} />) : (
+                                                            avatar ? (<img className={cx('image-avatar')} src={process.env.REACT_APP_BACKEND_URL + '/' +avatar} alt={Username} />) : (
 
                                                                 <img className={cx('image-avatar')} src='https://bootdey.com/img/Content/avatar/avatar7.png' alt={Username} />
                                                             )}
@@ -214,10 +211,10 @@ function Setting() {
                                 <div className={cx('field-input')}>
                                     <h3 className={cx('field-label')}>Username</h3>
                                     <div className={cx('field-description')}>
-                                        <input type='text' className={cx("field-input-content")} placeholder='thêm tên của bạn' value={user.nickname} maxLength='50' disabled />
+                                        <input type='text' className={cx("field-input-content")} placeholder='thêm tên của bạn' value={user.username} maxLength='50' disabled />
                                         <div className={cx("description")}>
 
-                                            <p><span className={cx('field-url')}>URL: </span>{process.env.REACT_APP_FRONTEND_URL}/@/{user.nickname}</p>
+                                            <p><span className={cx('field-url')}>URL: </span>{process.env.REACT_APP_FRONTEND_URL}/@/{user.username}</p>
                                         </div>
                                     </div>
                                 </div>

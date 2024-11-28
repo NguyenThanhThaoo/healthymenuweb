@@ -50,56 +50,30 @@ export const deleteDishAdmin = (id) => API.delete('/deleteFood/' + id , {
     }
 })
 
-//course
-export const getListCourseAdmin = (slug) => API.get('/api/admin/allCourse/' + slug + '', {
-    headers: {
-        'token': localStorage.getItem('token')
-    }
-})
-
-export const getDetailCourseAdmin = (id) => API.get('/api/admin/courseDetail/' + id + '', {
-    headers: {
-        'token': localStorage.getItem('token')
-    }
-})
-
-export const addCourseAdmin = (slug, data) => API.put('/api/admin/addcourse/' + slug + '', data, {
-    headers: {
-        'token': localStorage.getItem('token')
-    }
-})
-
-export const editCourseAdmin = (id, data) => API.put('/api/admin/edit/' + id + '', {
-    headers: {
-        'token': localStorage.getItem('token')
-    }, data
-})
-export const deleteCourseAdmin = (id) => API.delete('/api/admin/deletecourse/' + id + '', {
-    headers: {
-        'token': localStorage.getItem('token')
-    }
-})
-
 //user
-export const getAllUsers = () => API.get('/api/users', {
+export const getAllUsers = ({ page = 1, limit = 12 }) => API.get('/users', {
     headers: {
-        'token': localStorage.getItem('token')
+        'Authorization': localStorage.getItem('token'),
+        params: { 
+            page, 
+            limit 
+        }
     }
 })
-export const getDetailUser = (id) => API.get('/api/users/' + id + '/edit', {
+export const getDetailUser = (id) => API.get('/user_detail/' + id, {
     headers: {
-        'token': localStorage.getItem('token')
+        'Authorization': localStorage.getItem('token')
     }
 })
 
-export const editUser = (id, data) => API.put('/api/users/' + id + '/update', {
+export const editUser = (id, data) => API.put('/edit_user/' + id,data, {
     headers: {
-        'token': localStorage.getItem('token')
-    }, data
+        'Authorization': localStorage.getItem('token')
+    }
 })
-export const deleteUser = (id) => API.delete('/api/users/' + id + '/delete', {
+export const deleteUser = (id) => API.delete('/delete_user/' + id , {
     headers: {
-        'token': localStorage.getItem('token')
+        'Authorization': localStorage.getItem('token')
     }
 }
 )

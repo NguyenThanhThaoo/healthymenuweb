@@ -21,32 +21,32 @@ function Header() {
     const navigate = useNavigate()
     const [data, setData] = useState({})
     const { nickname } = useParams()
-    useEffect(() => {
-        const getUserData = async () => {
-            try {
-                const { data } = await getProfileUser()
-                if (data) {
-                    setData({ ...data.data })
-                }
-                if (data.err === 0) {
-                    localStorage.removeItem('token');
-                    const data = { Username: null, email: null, admin: null, avatar: null }
-                    localStorage.setItem('currentUser', JSON.stringify(data));
-                }
-            }
-            catch {
-                // setUserState(localStorage.removeItem('token'))
-                localStorage.removeItem('token');
-                const data = { Username: null, email: null, admin: null, avatar: null }
-                localStorage.setItem('currentUser', JSON.stringify(data));
+    // useEffect(() => {
+    //     const getUserData = async () => {
+    //         try {
+    //             const { data } = await getProfileUser()
+    //             if (data) {
+    //                 setData({ ...data.data })
+    //             }
+    //             if (data.err === 0) {
+    //                 localStorage.removeItem('token');
+    //                 const data = { Username: null, email: null, admin: null, avatar: null }
+    //                 localStorage.setItem('currentUser', JSON.stringify(data));
+    //             }
+    //         }
+    //         catch {
+    //             // setUserState(localStorage.removeItem('token'))
+    //             localStorage.removeItem('token');
+    //             const data = { Username: null, email: null, admin: null, avatar: null }
+    //             localStorage.setItem('currentUser', JSON.stringify(data));
 
-            }
-        }
-        getUserData()
-    }, [])
+    //         }
+    //     }
+    //     getUserData()
+    // }, [])
     const context = useContext(StoreContext)
     return (
-        <div className={cx('wrapper', nickname ? ('nav-transparent') : (''))}>
+        <div className={cx('wrapper')}>
             <div className={cx('inner')} >
                 <div className={cx('logo')}>
                     <div className={cx('bar-menu')}>
@@ -55,18 +55,17 @@ function Header() {
                     <Link to="/admin/manage-foods">
                         <img src={HealthyMenuAdmin} alt="HealthyMenu Admin" />
                     </Link>
-                    {!(nickname) ? <h3 className={cx('logoHeading')}>HealthyMenu Admin</h3> : ''}
                     <div className={cx('return-home')} onClick={() => {
                         navigate({
                             pathname: '/admin/manage-foods'
                         })
-                    }}> {nickname ? <>
+                    }}> <>
                         <FontAwesomeIcon icon={faAngleLeft} />
-                        <span>Quay lại</span> </> : ''}
+                        <span>Quay lại</span> </> 
                     </div>
 
                 </div>
-                {!(nickname) ? <Search /> : ''}
+             
                 <div className={cx('action')}>
                     {localStorage.getItem('token') ? (
                         <>
