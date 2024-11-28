@@ -263,7 +263,7 @@ function Learning() {
     return <> <section className={cx('module-grid', 'module-fullwidth')} style={{ maxWidth: '1920px' }}>
 
         <div className={cx('header-wapper')}>
-            <Link className={cx('header-logo')} to={ConfigRoutes.managedishess}>
+            <Link className={cx('header-logo')} to={ConfigRoutes.manageCourses}>
                 <img alt='HealthyMenuAdmin' src={HealthyMenuAdmin} />
             </Link>
             <div className={cx('header-dishes-title')}>HealthyMenu Admin</div>

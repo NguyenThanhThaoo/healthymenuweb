@@ -37,11 +37,18 @@ function ManageCourses() {
     useEffect(() => {
         const getDataTopics = async () => {
             try {
-                const { data } = await getAllDishesAdmin({ page: page + 1, limit: rowsPerPage });
-                if (data) {
-                    setTopics(data.dishes || []);
-                    setTotalPage(data.totalPages || 0);
+                const res = await getAllDishesAdmin({ page: page + 1, limit: rowsPerPage });
+                console.log(res)
+                if (res.status===200) {
+                    setTopics(res.data.dishes || []);
+                    setTotalPage(res.data.totalPages || 0);
                 }
+                if(res.status===500&& !res.data.auth){
+                    const data = { Username: null, email: null, admin: null, avatar: null }
+                    localStorage.setItem('currentUser', JSON.stringify(data))
+                    localStorage.removeItem('token');
+                     window.location.href = '/login'
+                } 
             } catch (error) {
                 toast.error("Lỗi server", {
                     position: "top-center",
