@@ -14,6 +14,9 @@ import { getAllDishesAdmin } from "../../API/adminRequest";
 import Avatar from '../../layouts/components/proper/Avatar';
 import { StoreContext } from "../../store";
 import { Stack, TablePagination } from "@mui/material";
+import { useDebouncedValue } from '@mantine/hooks';
+import SearchBox from "../../layouts/components/searchBox/SearchBox";
+// import SearchBox from "../../layouts/components/search";
 
 const cx = classNames.bind(styles);
 
@@ -24,6 +27,9 @@ function ManageCourses() {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(12);
     const [totalPage, setTotalPage] = useState(0);
+    const [search, setSearch] = useState('');
+    const [searchDish] = useDebouncedValue(search, 500);
+
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -37,28 +43,37 @@ function ManageCourses() {
     useEffect(() => {
         const getDataTopics = async () => {
             try {
-                const res = await getAllDishesAdmin({ page: page + 1, limit: rowsPerPage });
-                console.log(res)
+                const res = await getAllDishesAdmin({ page: page + 1, limit: rowsPerPage,searchDish });
+                console.log("res",res)
                 if (res.status===200) {
                     setTopics(res.data.dishes || []);
                     setTotalPage(res.data.totalPages || 0);
                 }
-                if(res.status===500&& !res.data.auth){
+                if(res.status===500 && !res.data.auth){
                     const data = { Username: null, email: null, admin: null, avatar: null }
                     localStorage.setItem('currentUser', JSON.stringify(data))
                     localStorage.removeItem('token');
                      window.location.href = '/login'
                 } 
+               
             } catch (error) {
+                console.log(error.response)
                 toast.error("Lỗi server", {
                     position: "top-center",
                     autoClose: 2000,
                     hideProgressBar: false,
                 });
+                if(error.response.status===401){
+                    console.log("vovovo")
+                    const data = { Username: null, email: null, admin: null, avatar: null }
+                    localStorage.setItem('currentUser', JSON.stringify(data))
+                    localStorage.removeItem('token');
+                     window.location.href = '/login'
+                }               
             }
         };
         getDataTopics();
-    }, [page, rowsPerPage]);
+    }, [page, rowsPerPage,searchDish]);
 
     return (
         <>
@@ -80,18 +95,30 @@ function ManageCourses() {
                 <div className="container">
                     <div className={cx('course')}>
                         <div>
-                            <div className={cx('heading-wrapper', 'heading-margin')}>
+                            <div className={cx('heading-wrapper', 'heading-margin')} style={{marginBottom:"10px"}}>
                                 <h2 className={cx('heading')}>
                                     <Link className={cx('wrapper')} to={ConfigRoutes.pathLearning} target="_self">
                                         Tất Cả Các Món Ăn
                                     </Link>
                                 </h2>
+                                <Stack direction={'row'} gap={'10px'}>
+                                <SearchBox
+                        inputValue={search || ''}
+                        placeholder={`Nhập món ăn cần tìm...`}
+                        onChange={(v) => {
+                            setSearch( v.target.value);
+                            // if (v.target.value === '') {
+                            //     setPage(0);
+                            // }
+                        }}
+                    />
                                 <button className={cx('bnt-add-topics')}>
                                     <Link className={cx('wrapper1')} to={ConfigRoutes.ManageTopics} target="_self">
                                         <FontAwesomeIcon className={cx('icon-add')} icon={faAdd} />
                                         Thêm Món Ăn
                                     </Link>
                                 </button>
+                                </Stack>
                             </div>
                         </div>
                         <div className={cx('body')}>

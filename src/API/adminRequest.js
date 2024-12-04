@@ -4,7 +4,7 @@ import axios from "axios"
 const API = axios.create({ baseURL: process.env.REACT_APP_BACKEND_URL })
 
 //Topics admin
-export const getAllDishesAdmin = async ({ page = 1, limit = 12 }) => {
+export const getAllDishesAdmin = async ({ page = 1, limit = 12,searchDish='' }) => {
     try {
         const token = localStorage.getItem('token');
         if (!token) {
@@ -17,7 +17,8 @@ export const getAllDishesAdmin = async ({ page = 1, limit = 12 }) => {
             },
             params: { 
                 page, 
-                limit 
+                limit,
+                searchDish
             }
         });
 

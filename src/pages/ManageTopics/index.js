@@ -73,7 +73,7 @@ function Learning() {
             const format = new FormData()
             format.append('image', image);
             format.append('type0fgroup', type0fgroup);
-            format.append('typeofffood', typeoffood);
+            format.append('typeoffood', typeoffood);
             format.append('description', description);
             format.append('ingredient', ingredient);
             format.append('methob', methob);
@@ -126,10 +126,10 @@ function Learning() {
                 // setDishesDetail({ ...data.data })
                 console.log(data)
                 setName(data.data.title)
-                setTypeoffood(data.data.type0fgroup)
+                setTypeoffood(data.data.typeoffood)
                 setDescription(data.data.description)
                 setImage(data.data.image_path)
-                setType0fgroup(data.data.typeoffood)
+                setType0fgroup(data.data.type0fgroup)
                 setIngredient(data.data.ingredient)
                 setMethob(data.data.methob)
                 setactive("stepitem-active")
@@ -361,9 +361,9 @@ function Learning() {
                                 <div className={cx('text-input')}>
                                     <label className={cx('label')}>Loại Món Ăn</label>
                                     <div className={cx('input-wrapper')}>
-                                        <select className={cx('inputs', 'inputss', 'fix-fontsize',`${typeoffood?"":'disabled'}`)} disabled={typeoffood?false:true} value={type0fgroup} onChange={(e) => setType0fgroup(e.target.value)}>
-                                        {!typeoffood&&<option value="">-- Vui lòng chọn nhóm món ăn trước --</option>}
-                                            {typeoffood==="Món ăn"&&<>
+                                        <select className={cx('inputs', 'inputss', 'fix-fontsize',`${type0fgroup?"":'disabled'}`)} disabled={type0fgroup?false:true} value={typeoffood} onChange={(e) => setTypeoffood(e.target.value)}>
+                                        {!type0fgroup&&<option value="">-- Vui lòng chọn nhóm món ăn trước --</option>}
+                                            {type0fgroup==="Món ăn"&&<>
                                                 <option value="">-- Chọn loại đồ ăn --</option>
                                             <option value="Món chính" >Món chính</option>
                                             <option value="Ăn vật">Ăn vật</option>
@@ -371,7 +371,7 @@ function Learning() {
                                             <option value="Món khác">Món khác</option>
                                             </>
                                             }
-                                            {typeoffood==="Đồ uống"&&<>
+                                            {type0fgroup==="Đồ uống"&&<>
                                                 <option value="">-- Chọn loại thức uống --</option>
                                             <option value="Nước ép" >Nước ép</option>
                                             <option value="Sinh tố">Sinh tố</option>
@@ -387,7 +387,7 @@ function Learning() {
                                 <div className={cx('text-input')}>
                                     <label className={cx('label')}>Nhóm món ăn</label>
                                     <div className={cx('input-wrapper')}>
-                                        <select className={cx('inputs', 'inputss', 'fix-fontsize')} value={typeoffood} onChange={(e) => setTypeoffood(e.target.value)}>
+                                        <select className={cx('inputs', 'inputss', 'fix-fontsize')} value={type0fgroup} onChange={(e) => setType0fgroup(e.target.value)}>
                                             <option value="">-- Chọn nhóm món ăn --</option>
                                             <option value="Món ăn" >Món ăn</option>
                                             <option value="Đồ uống">Đồ uống</option>
