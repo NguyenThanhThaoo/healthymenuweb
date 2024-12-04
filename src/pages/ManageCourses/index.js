@@ -57,13 +57,13 @@ function ManageCourses() {
                 } 
                
             } catch (error) {
-                console.log(error.response)
+                console.log("error.response",error.response)
                 toast.error("Lỗi server", {
                     position: "top-center",
                     autoClose: 2000,
                     hideProgressBar: false,
                 });
-                if(error.response.status===401){
+                if(error.response?.status===401||!error.response){
                     console.log("vovovo")
                     const data = { Username: null, email: null, admin: null, avatar: null }
                     localStorage.setItem('currentUser', JSON.stringify(data))
