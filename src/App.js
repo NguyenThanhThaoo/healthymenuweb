@@ -16,7 +16,7 @@ function App() {
     }
   }, [])
   return (
-    <Router basename='/'>
+    <Router basename='/admin/manage-foods"'>
       <div className="App">
         <Routes>
           <>

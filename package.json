@@ -1,7 +1,7 @@
 {
   "name": "HealthyMenuWeb",
   "version": "0.1.0",
-  "homepage": "/",
+  "homepage": "/admin/manage-foods",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
