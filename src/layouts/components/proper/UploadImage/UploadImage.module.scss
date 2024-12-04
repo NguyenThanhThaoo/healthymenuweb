@@ -1,0 +1,59 @@
+.upload {
+    width: 200px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 -4px 32px rgba(0, 0, 0, .2);
+    color: #1d2129;
+    padding: 5px;
+    display: flex;
+    align-items: baseline;
+
+    &:hover {
+        background-color: rgb(255, 194, 82);
+    }
+
+}
+
+.upload-icon {
+
+    padding: 8px;
+    position: relative;
+    user-select: none;
+    font-size: 2rem;
+    cursor: pointer;
+
+
+}
+
+.upload-heading {
+    padding: 5px;
+    width: 10%;
+    margin-right: 5px;
+
+    h6 {
+        font-size: 1.8rem;
+        color: black;
+        margin: 0;
+        font-weight: 600;
+    }
+}
+
+.upload-content {
+    width: 90%;
+
+    p {
+        color: #666;
+        font-size: 1.8rem;
+        padding: 3px;
+        margin: 0;
+    }
+
+}
+
+
+@media screen and (max-width:980px) {
+    .upload {
+        width: 100%;
+        min-height: 100%;
+    }
+}

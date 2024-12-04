@@ -1,0 +1,41 @@
+.wrapper {
+    border-radius: 999px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 9px 20px;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: #f05123;
+    color: #fff !important;
+
+
+
+}
+
+.normal {
+    background-color: #767575;
+    color: rgb(255, 255, 255);
+
+
+}
+
+.primary,
+.fomal,
+.normal {
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.fomal {
+    background-color: #000000 !important;
+    color: #fff !important;
+}
+
+.disable {
+    opacity: .5 !important;
+    cursor: not-allowed !important;
+    user-select: none !important;
+}

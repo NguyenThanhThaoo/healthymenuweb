@@ -1,0 +1,68 @@
+.container {
+    /* gap: 6px; */
+}
+
+/* input */
+.inputContainer {
+    position: relative;
+}
+
+.input {
+    outline: none;
+    transition: all 0.2s;
+    color: #323232;
+    display: flex;
+    height: 40px;
+    padding: 13px 16px 13px 50px;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 6px;
+    border: 1px solid #e3e5e5;
+    background: #fff;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 125% */
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .input {
+        border: 0;
+    }
+}
+
+.input:hover {
+    border-color: #007dc0;
+}
+
+.input:focus {
+    border-color: #007dc0;
+}
+
+.input::placeholder {
+    color: #afafaf;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+/* clear btn */
+.clearBtnContainer {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.clearButton {
+    font-size: 20px;
+    color: #e3e5e5;
+}

@@ -1,0 +1,5 @@
+export { default as Wrapper } from './wrapper'
+export { default as Avatar } from './Avatar'
+export { default as MyCourse } from './MyCourse'
+export { default as BarMenu } from './BarMenu'
+export { default as UploadImage } from './UploadImage'

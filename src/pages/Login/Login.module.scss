@@ -1,0 +1,273 @@
+.wrapper {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.wrapper.hasBg {
+    background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url('../../assets/image/bg.jpg');
+    background-size: cover;
+}
+
+
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.content {
+    --width: 600px;
+    background: #fff;
+    border-radius: 8px;
+    max-width: calc(100vw - 32px);
+    min-height: 500px;
+    padding: 48px 16px;
+    position: relative;
+    width: var(--width);
+}
+
+.message {
+    color: #ff1010;
+
+}
+
+.header {
+    overflow: hidden;
+}
+
+.logo {
+    border-radius: 8px;
+    height: 100px;
+    object-fit: cover;
+    width: 100px;
+    // margin-bottom: 10px;
+}
+
+.body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.main-step {
+    margin-top: 24px;
+}
+
+.sigin-button {
+    --height: 44px;
+    background-color: #fff;
+    border: 2px solid #dce0e3;
+    border-radius: 44px;
+    display: inline-block;
+    height: var(--height);
+    line-height: var(--height);
+    padding-left: 16px;
+    position: relative;
+    text-align: center;
+    width: 320px;
+
+    &:hover {
+        background-color: rgb(255, 209, 148);
+    }
+}
+
+.sigin-button+.sigin-button {
+    margin-top: 14px;
+}
+
+.icon {
+    left: 16px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.text {
+    color: #35414c;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 40px;
+    outline: 0;
+    text-align: center;
+}
+
+.title {
+    color: #292929;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.noAccount {
+    font-size: 1.7rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+    padding: 24px 16px 0;
+
+
+
+}
+
+.noAccount a,
+.forget-pass {
+    color: #f71a1a !important;
+    margin-left: 5px;
+    font-weight: 600;
+
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.about {
+    line-height: 1.8;
+    margin-top: 12px;
+}
+
+.about a,
+.about span {
+
+    color: #fff !important;
+    font-size: 1.6rem;
+
+}
+
+.about {
+    span {
+        margin: 0 8px;
+    }
+
+    a {
+        &:hover {
+            opacity: .5;
+        }
+    }
+}
+
+.formBody {
+    max-width: 100%;
+    width: 380px;
+}
+
+.form-content {
+    margin-top: 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.input-content {
+    color: #292929;
+    text-align: center;
+    width: 100%;
+}
+
+.labelGroup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 10px 0 10px 8px;
+}
+
+.inputGroup {
+    background: rgba(22, 24, 35, .06);
+    border: 1px solid rgba(22, 24, 35, .06);
+    border-radius: 44px;
+    display: flex;
+    height: 44px;
+    overflow: hidden;
+
+    input {
+        background-color: transparent;
+        border: none;
+        display: block;
+        flex: 1 1;
+        font-size: 1.4rem;
+        outline: none;
+        padding: 12px 20px;
+    }
+}
+
+.sumbnt {
+    border-radius: 44px;
+    height: 44px;
+    margin-top: 30px;
+    width: 100%;
+    background-color: #ff1010;
+    color: #fff;
+    cursor: pointer;
+
+
+}
+
+.inner {
+    font-size: 16px;
+    padding: 8px 16px;
+}
+
+.module-inner {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.module-text {
+    opacity: 1;
+    transition: opacity .15s cubic-bezier(.2, .2, .2, 1);
+}
+
+.forget-pass {
+    cursor: pointer;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-top: 5px;
+
+}
+
+.backbnt {
+    color: #404040;
+    font-size: 2rem;
+    left: 0;
+    padding: 32px;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+
+
+}
+
+@media (min-width:0) and (max-width:430px) {
+    .formBody {
+        width: 100%;
+    }
+}
+
+@media (min-width:0) and (max-width:365px) {
+    .sigin-button {
+        width: 100%;
+    }
+}
+
+@media (min-width:0) and (max-width:280px) {
+    .content {
+        padding: 10px 16px;
+    }
+}
