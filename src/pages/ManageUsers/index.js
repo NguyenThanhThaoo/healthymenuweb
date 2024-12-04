@@ -12,7 +12,6 @@ import ConfigRoutes from '../../config/routes'
 import { deleteUser, editUser, getAllUsers, getDetailUser } from '../../API/adminRequest';
 import Avatar from "../../layouts/components/proper/Avatar";
 import { Stack, TablePagination } from "@mui/material";
-// import ShowMessageWatch from '../../layouts/components/ShowMessageWatch';
 const cx = classNames.bind(styles)
 
 function ManageUsers() {
