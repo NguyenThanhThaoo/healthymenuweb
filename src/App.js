@@ -16,59 +16,66 @@ function App() {
     }
   }, [])
   return (
-    <Router basename='/admin/manage-foods"'>
-      <div className="App">
-        <Routes>
-          <>
-            {/* {
-              publicRoutes.map((route, index) => {
-                const Page = route.component
-                let Layout = DefaultLayout
-                if (route.layout) {
-                  Layout = route.layout
-                } else if (route.layout === null) {
-                  Layout = Fragment
-                }
-                return <Route key={index} path={route.path} element={
-                  <Layout><Page /></Layout>}
-                />
-              })} */}
-            {privateRoutes.map((route, index) => {
-              let Page = route.component
-              let Layout = DefaultLayout
-              if (route.layout) {
-                Layout = route.layout
-              } else if (route.layout === null) {
-                Layout = Fragment
-              }
-              return <Route key={index} path={route.path} element={localStorage.getItem('token') ?
-                <Layout><Page /></Layout> : <Navigate to={ConfigRoutes.Login} />
-
-              } />
-            })}
-
-            {authRoutes.map((route, index) => {
-              let Page = route.component
-              let Layout = DefaultLayout
-              if (route.layout) {
-                Layout = route.layout
-              } else if (route.layout === null) {
-                Layout = Fragment
-              }
-              return <Route key={index} path={route.path} element={localStorage.getItem('token') ?
-                <Navigate to={ConfigRoutes.ManageTopics} /> : <Layout><Page /></Layout>
-
-              } />
-            })}
-
-            <Route path="/not-found" element={<PageNoteFound />} />
-            <Route path="*" element={<Navigate to="/not-found" />} />
-          </>
-        </Routes>
-      </div>
-      <BarMenu />
-      <Loading />
-    </Router>
+    <Routes>
+    <>
+      {/* Thêm điều hướng từ '/' đến '/admin/manage-foods' */}
+      <Route path="/" element={<Navigate to={ConfigRoutes.ManageFoods} replace />} />
+  
+      {privateRoutes.map((route, index) => {
+        let Page = route.component;
+        let Layout = DefaultLayout;
+        if (route.layout) {
+          Layout = route.layout;
+        } else if (route.layout === null) {
+          Layout = Fragment;
+        }
+        return (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              localStorage.getItem('token') ? (
+                <Layout>
+                  <Page />
+                </Layout>
+              ) : (
+                <Navigate to={ConfigRoutes.Login} />
+              )
+            }
+          />
+        );
+      })}
+  
+      {authRoutes.map((route, index) => {
+        let Page = route.component;
+        let Layout = DefaultLayout;
+        if (route.layout) {
+          Layout = route.layout;
+        } else if (route.layout === null) {
+          Layout = Fragment;
+        }
+        return (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              localStorage.getItem('token') ? (
+                <Navigate to={ConfigRoutes.ManageTopics} />
+              ) : (
+                <Layout>
+                  <Page />
+                </Layout>
+              )
+            }
+          />
+        );
+      })}
+  
+      <Route path="/not-found" element={<PageNoteFound />} />
+      <Route path="*" element={<Navigate to="/not-found" />} />
+    </>
+  </Routes>
+  
 
   );
 }
