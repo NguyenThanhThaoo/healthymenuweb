@@ -83,7 +83,7 @@ function Learning() {
         setMethob('')
         setIngredient('')
         navigate({
-            pathname: '/admin/manage-food'
+            pathname: '/admin/manage-foods'
         })
     }
    
