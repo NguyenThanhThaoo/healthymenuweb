@@ -34,8 +34,8 @@ function Avatar({ children }) {
                         <div className={cx('menu-user')}>
                             <div className={cx('avatar')}>
                                 <div className={cx('avatar-child')}>
-                                    {user?.provider ? <img src={process.env.REACT_APP_BACKEND_URL + '/user/' + user?.nickname + '/' + user?.avatar} alt={user?.Username} /> :
-                                        user?.avatar ? (<img src={process.env.REACT_APP_BACKEND_URL + '/user/' + user?.nickname + '/' + user?.avatar} alt={user?.Username} />) : (
+                                {
+                                        user?.avatar ? (<img src={process.env.REACT_APP_BACKEND_URL + '/' + user?.avatar} alt={user?.Username} />) : (
                                             <img src='https://bootdey.com/img/Content/avatar/avatar7.png' alt={user?.Username} />
                                         )}
                                 </div>

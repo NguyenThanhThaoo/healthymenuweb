@@ -74,8 +74,8 @@ function Header() {
                             <Avatar>
                                 <div onClick={context.handleAvater} className={cx('avatar-user')}>
                                     <div className={cx('avatar-children')}>
-                                        {data?.provider ? <img src={process.env.REACT_APP_BACKEND_URL + '/user/' + data?.nickname + '/' + data?.avatar} alt={data?.Username} /> :
-                                            data?.avatar ? (<img src={process.env.REACT_APP_BACKEND_URL + '/user/' + data?.nickname + '/' + data?.avatar} alt={data?.Username} />) : (
+                                        {
+                                            data?.avatar ? (<img src={process.env.REACT_APP_BACKEND_URL + '/'+ data?.avatar} alt={data?.Username} />) : (
 
                                                 <img src='https://bootdey.com/img/Content/avatar/avatar7.png' alt={data?.Username} />
                                             )}

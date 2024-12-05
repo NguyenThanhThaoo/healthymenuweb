@@ -103,7 +103,7 @@ console.log("ASDsad", slug)
                     theme: "light",
                 })
                 navigate({
-                    pathname: '/admin/addFoods'
+                    pathname: '/admin/manage-foods'
                 })
             } else {
                 toast.warn("Xóa món ăn thất bại", {

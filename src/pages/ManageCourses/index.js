@@ -86,7 +86,7 @@ function ManageCourses() {
                     <div className={cx('header-actions')}>
                     <Avatar>
                     <button onClick={context.handleAvater} className={cx('action-bnt')}>
-                        <img alt='logo' className={cx('header-icon')} src={dataUser.avatar ? process.env.REACT_APP_BACKEND_URL + '/user/' + dataUser.nickname + '/' + dataUser.avatar : "https://bootdey.com/img/Content/avatar/avatar7.png"} />
+                        <img alt='logo' className={cx('header-icon')} src={dataUser.avatar ? process.env.REACT_APP_BACKEND_URL + '/' + dataUser.avatar : "https://bootdey.com/img/Content/avatar/avatar7.png"} />
                         <span className={cx('header-label')}>{dataUser.Username}</span>
                     </button>
                 </Avatar>
