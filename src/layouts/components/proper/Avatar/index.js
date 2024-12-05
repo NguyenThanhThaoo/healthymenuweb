@@ -19,9 +19,6 @@ function Avatar({ children }) {
         window.location.href = '/login';
     }
     const user = JSON.parse(localStorage.getItem('currentUser'))
-    // alert(JSON.stringify(user))
-    console.log(user)
-
     return (
         <Tippy
             placement='bottom-end'

@@ -116,7 +116,7 @@ function Learning() {
         setMethob('')
         setIngredient('')
         navigate({
-            pathname: '/admin/addFoods'
+            pathname: '/admin/manage-foods'
         })
     }
     async function handleOnlickId(id) {

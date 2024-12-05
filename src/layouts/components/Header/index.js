@@ -19,30 +19,30 @@ import { getProfileUser } from '../../../API/userRequest'
 const cx = classNames.bind(styles)
 function Header() {
     const navigate = useNavigate()
-    const [data, setData] = useState({})
+    const user = JSON.parse(localStorage.getItem('currentUser'))
     const { nickname } = useParams()
     // useEffect(() => {
-    //     const getUserData = async () => {
+    //     const getUseruser = async () => {
     //         try {
-    //             const { data } = await getProfileUser()
-    //             if (data) {
-    //                 setData({ ...data.data })
+    //             const { user } = await getProfileUser()
+    //             if (user) {
+    //                 setuser({ ...user.user })
     //             }
-    //             if (data.err === 0) {
+    //             if (user.err === 0) {
     //                 localStorage.removeItem('token');
-    //                 const data = { Username: null, email: null, admin: null, avatar: null }
-    //                 localStorage.setItem('currentUser', JSON.stringify(data));
+    //                 const user = { Username: null, email: null, admin: null, avatar: null }
+    //                 localStorage.setItem('currentUser', JSON.stringify(user));
     //             }
     //         }
     //         catch {
     //             // setUserState(localStorage.removeItem('token'))
     //             localStorage.removeItem('token');
-    //             const data = { Username: null, email: null, admin: null, avatar: null }
-    //             localStorage.setItem('currentUser', JSON.stringify(data));
+    //             const user = { Username: null, email: null, admin: null, avatar: null }
+    //             localStorage.setItem('currentUser', JSON.stringify(user));
 
     //         }
     //     }
-    //     getUserData()
+    //     getUseruser()
     // }, [])
     const context = useContext(StoreContext)
     return (
@@ -75,9 +75,9 @@ function Header() {
                                 <div onClick={context.handleAvater} className={cx('avatar-user')}>
                                     <div className={cx('avatar-children')}>
                                         {
-                                            data?.avatar ? (<img src={process.env.REACT_APP_BACKEND_URL + '/'+ data?.avatar} alt={data?.Username} />) : (
+                                            user?.avatar ? (<img src={process.env.REACT_APP_BACKEND_URL + '/'+ user?.avatar} alt={user?.Username} />) : (
 
-                                                <img src='https://bootdey.com/img/Content/avatar/avatar7.png' alt={data?.Username} />
+                                                <img src='https://bootdey.com/img/Content/avatar/avatar7.png' alt={user?.Username} />
                                             )}
                                     </div>
                                 </div>
