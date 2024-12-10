@@ -145,14 +145,14 @@ function ManageCourses() {
                                                     <h3 className={cx('title')}>
                                                         <Link target='_self' to={`/admin/manage-foods/${val.food_id}`}>{val.title}</Link>
                                                     </h3>
-                                                    <div className={cx('stars')}>
+                                                    {/* <div className={cx('stars')}>
                                                         {[...Array(5)].map((_, idx) => (
                                                             <FontAwesomeIcon key={idx} icon={faStar} className={cx('fix-star')} />
                                                         ))}
                                                         <span className={cx('text-mutes')}>
                                                             <span className={cx('fix-font')}>5.0</span>
                                                         </span>
-                                                    </div>
+                                                    </div> */}
                                                     <div className={cx('slogan')}>
                                                         <span className={cx('text-slogan')}>From HealthyMenu</span>
                                                     </div>
