@@ -15,7 +15,7 @@ function WithouSidebar({ children }) {
         <div ref={refPr}>
             <Header />
             {children}
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }
