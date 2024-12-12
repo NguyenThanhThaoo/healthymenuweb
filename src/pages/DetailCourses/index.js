@@ -226,7 +226,7 @@ console.log("ASDsad", slug)
                                             {type0fgroup==="Món ăn"&&<>
                                                 <option value="">-- Chọn loại đồ ăn --</option>type0fgroup
                                             <option value="Món chính" >Món chính</option>
-                                            <option value="Ăn vật">Ăn vật</option>
+                                            <option value="Ăn vặt">Ăn vặt</option>
                                             <option value="Món chay">Món chay</option>
                                             <option value="Món khác">Món khác</option>
                                             </>
