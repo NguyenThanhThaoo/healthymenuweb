@@ -110,7 +110,7 @@ function Login() {
             catch {
                 const data = { Username: null, email: null, admin: null, avatar: null }
                 localStorage.setItem('currentUser', JSON.stringify(data))
-                toast.error('Lối sever', {
+                toast.error('Lỗi sever', {
                     position: "top-center",
                     autoClose: 2000,
                     hideProgressBar: false,

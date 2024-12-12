@@ -158,7 +158,7 @@ function ManageUsers() {
         try {
             const res = await deleteUser(searchPar.get('id'))
             if (res.status === 200) {
-                toast.success("Xóa khóa học thành công", {
+                toast.success("Xóa tài khoản thành công", {
                     position: "top-center",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -296,6 +296,21 @@ function ManageUsers() {
                                     </div>
                                 </div>
                                 <div className={cx('text-input')}>
+                                    <label className={cx('label')}>Email</label>
+                                    <div className={cx('input-wrapper')}>
+                                        <input
+                                            type='text'
+                                            value={email}
+                                            placeholder='Nhập email...'
+                                            className={cx('inputs', 'inputss', 'fix-fontsize')}
+                                            // onBlur={onBlurPhone}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        // disabled={searchPar.get('id') ? false : true}
+
+                                        />
+                                    </div>
+                                </div>
+                                {/* <div className={cx('text-input')}>
                                     <label className={cx('label')}>Điện thoại</label>
                                     <div className={cx('input-wrapper')}>
                                         <input
@@ -306,15 +321,15 @@ function ManageUsers() {
                                             onChange={(e) => setPhoneNumber(e.target.value)}
                                         />
                                     </div>
-                                </div>
-                                <div className={cx('text-input')}>
+                                </div> */}
+                                {/* <div className={cx('text-input')}>
                                     <label className={cx('label')}>Địa chỉ</label>
                                     <div className={cx('input-wrapper')}>
-                                        {/* <select className={cx('inputs', 'inputss', 'fix-fontsize')} value={subject} onChange={(e) => setSubject(e.target.value)}>
+                                        <select className={cx('inputs', 'inputss', 'fix-fontsize')} value={subject} onChange={(e) => setSubject(e.target.value)}>
                                             <option value="">-- Chọn loại khóa học --</option>
                                             <option value="English" >Tiếng anh</option>
                                             <option value="LT">Lập trình</option>
-                                        </select> */}
+                                        </select>
 
                                         <input
                                             type='text'
@@ -326,7 +341,7 @@ function ManageUsers() {
                                         />
                                     </div>
 
-                                </div>
+                                </div> */}
                             </div>
                             <div className={cx('form-2')}>
                                 <div className={cx('text-input')}>
@@ -354,22 +369,8 @@ function ManageUsers() {
                                         />
                                     </div>
                                 </div>
-                                <div className={cx('text-input')}>
-                                    <label className={cx('label')}>Email</label>
-                                    <div className={cx('input-wrapper')}>
-                                        <input
-                                            type='text'
-                                            value={email}
-                                            placeholder='Nhập email...'
-                                            className={cx('inputs', 'inputss', 'fix-fontsize')}
-                                            // onBlur={onBlurPhone}
-                                            onChange={(e) => setEmail(e.target.value)}
-                                        // disabled={searchPar.get('id') ? false : true}
-
-                                        />
-                                    </div>
-                                </div>
-                                <div className={cx('text-input')}>
+                                
+                                {/* <div className={cx('text-input')}>
                                     <label className={cx('label')}>Quốc gia</label>
                                     <div className={cx('input-wrapper')}>
                                         <input
@@ -383,7 +384,7 @@ function ManageUsers() {
 
                                         />
                                     </div>
-                                </div>
+                                </div> */}
 
                             </div>
                         </div>
