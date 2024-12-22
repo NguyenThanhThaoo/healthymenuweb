@@ -47,8 +47,10 @@ function ManageUsers() {
             try {
                 const { data } = await getAllUsers({ page: page + 1, limit: rowsPerPage })
                 if (data) {
+                    console.log(data)
                     setUsers(data.users || [])
-                } setTotalPage(data.totalPages || 0);
+                    setTotalPage(data.totalPages || 0);
+                } 
              
             }
             catch {
