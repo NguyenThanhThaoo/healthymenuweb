@@ -354,7 +354,7 @@ function ManageUsers() {
                                         </select>
                                     </div>
                                 </div>
-                                <div className={cx('text-input')}>
+                                {/* <div className={cx('text-input')}>
                                     <label className={cx('label')}>Ảnh</label>
                                     <div className={cx('input-wrapper')}>
                                         <input
@@ -368,7 +368,7 @@ function ManageUsers() {
 
                                         />
                                     </div>
-                                </div>
+                                </div> */}
                                 
                                 {/* <div className={cx('text-input')}>
                                     <label className={cx('label')}>Quốc gia</label>
@@ -418,10 +418,10 @@ function ManageUsers() {
                 <FontAwesomeIcon icon={faTrash} />
                 <span>Xóa</span>
             </button>
-            <button onClick={handleSubmitEdit} className={cx('actionBar-bnt', 'actionBar-edit')}>
+            {/* <button onClick={handleSubmitEdit} className={cx('actionBar-bnt', 'actionBar-edit')}>
                 <span>Sửa</span>
                 <FontAwesomeIcon icon={faPenFancy} />
-            </button>
+            </button> */}
             <div className={cx('toggle-wrapper')}>
                 <button className={cx('toggle-btn')}>
                     {context.list ? (<FontAwesomeIcon onClick={context.handleList} icon={faArrowRight} />) : (<FontAwesomeIcon onClick={context.handleList} icon={faBars} />)
