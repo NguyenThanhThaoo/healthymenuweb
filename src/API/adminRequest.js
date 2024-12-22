@@ -55,10 +55,11 @@ export const deleteDishAdmin = (id) => API.delete('/deleteFood/' + id , {
 export const getAllUsers = ({ page = 1, limit = 12 }) => API.get('/users', {
     headers: {
         'Authorization': localStorage.getItem('token'),
-        params: { 
-            page, 
-            limit 
-        }
+       
+    },
+    params: { 
+        page, 
+        limit 
     }
 })
 export const getDetailUser = (id) => API.get('/user_detail/' + id, {
