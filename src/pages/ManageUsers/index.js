@@ -66,7 +66,7 @@ function ManageUsers() {
         }
         getDataUsers()
         // eslint-disable-next-line
-    }, [])
+    }, [page,rowsPerPage])
 
 
 
