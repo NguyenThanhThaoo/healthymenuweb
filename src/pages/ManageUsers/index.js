@@ -47,7 +47,7 @@ function ManageUsers() {
             try {
                 const { data } = await getAllUsers({ page: page + 1, limit: rowsPerPage })
                 if (data) {
-                    console.log(data)
+                  
                     setUsers(data.users || [])
                     setTotalPage(data.totalPages || 0);
                 } 
@@ -351,7 +351,7 @@ function ManageUsers() {
                                     <div className={cx('input-wrapper')}>
                                         <select className={cx('inputs', 'inputss', 'fix-fontsize')} value={role} onChange={(e) => setRole(e.target.value)}>
                                             <option value="">-- Chọn quyền --</option>
-                                            <option value="admin" >role</option>
+                                            <option value="admin" >admin</option>
                                             <option value="user">User</option>
                                         </select>
                                     </div>
