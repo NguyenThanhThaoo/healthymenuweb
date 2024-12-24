@@ -153,7 +153,7 @@ function Learning() {
             const format = new FormData()
             format.append('image', image);
             format.append('type0fgroup', type0fgroup);
-            format.append('typeofffood', typeoffood);
+            format.append('typeoffood', typeoffood);
             format.append('description', description);
             format.append('ingredient', ingredient);
             format.append('methob', methob);
