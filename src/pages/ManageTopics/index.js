@@ -201,8 +201,8 @@ function Learning() {
     const handleDeletedishes = async () => {
         try {
 
-            const { data } = await deleteDishAdmin(searchPar.get('id'))
-            if (data.success === 1) {
+            const res = await deleteDishAdmin(searchPar.get('id'))
+            if (res.status===200) {
                 toast.success("Xóa món ăn thành công", {
                     position: "top-center",
                     autoClose: 2000,
